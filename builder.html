@@ -27,7 +27,49 @@
             font-family: "Inter", sans-serif;
             background: #eef1f6;
             color: #111827;
-        }
+        }/* TEMPLATE STYLES */
+
+.resume.modern-template {
+    font-family: "Inter", sans-serif;
+}
+
+.resume.classic-template {
+    font-family: Georgia, serif;
+}
+
+.resume.classic-template .resume-header {
+    text-align: center;
+}
+
+.resume.classic-template .resume-header h3 {
+    color: #111827;
+}
+
+.resume.classic-template .resume-section h2 {
+    letter-spacing: 0;
+}
+
+.resume.minimal-template {
+    font-family: "Inter", sans-serif;
+}
+
+.resume.minimal-template .resume-header {
+    border-bottom: none;
+}
+
+.resume.minimal-template .resume-header h1 {
+    font-size: 38px;
+}
+
+.resume.minimal-template .resume-header h3 {
+    color: #6b7280;
+}
+
+.resume.minimal-template .resume-section h2 {
+    border-bottom: none;
+    letter-spacing: 0;
+    font-size: 13px;
+}
 
         /* HEADER */
 
@@ -85,7 +127,24 @@
             background: #4f46e5;
             color: white;
         }
+window.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
+        applyTemplate();
+
+        addExperience();
+
+        addEducation();
+
+        addProject();
+
+        loadData();
+
+        updateResume();
+
+    }
+);
         /* MAIN */
 
         .builder {
@@ -892,4 +951,32 @@
 
             });
 
-        previe
+        previe/* =========================
+   TEMPLATE SYSTEM
+========================= */
+
+function applyTemplate() {
+
+    const template =
+        localStorage.getItem("resumeForgeTemplate") || "modern";
+
+    const resume =
+        document.getElementById("resumePreview");
+
+    resume.classList.remove(
+        "modern-template",
+        "classic-template",
+        "minimal-template"
+    );
+
+    resume.classList.add(
+        template + "-template"
+    );
+}
+
+
+function openTemplates() {
+
+    window.location.href = "templates.html";
+
+}
