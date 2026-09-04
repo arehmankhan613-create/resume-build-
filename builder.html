@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -916,67 +915,4 @@ window.addEventListener(
                 const company =
                     item.querySelector(".exp-company").value;
 
-                const start =
-                    item.querySelector(".exp-start").value;
-
-                const end =
-                    item.querySelector(".exp-end").value;
-
-                const description =
-                    item.querySelector(".exp-description").value;
-
-                if (job || company || description) {
-
-                    html += `
-
-                        <div class="resume-item">
-
-                            <h3>${escapeHTML(job || "Job Title")}</h3>
-
-                            <div class="meta">
-                                ${escapeHTML(company)}
-                                ${company && (start || end) ? " • " : ""}
-                                ${escapeHTML(start)}
-                                ${start && end ? " - " : ""}
-                                ${escapeHTML(end)}
-                            </div>
-
-                            <p>
-                                ${escapeHTML(description)}
-                            </p>
-
-                        </div>
-                    `;
-                }
-
-            });
-
-        previe/* =========================
-   TEMPLATE SYSTEM
-========================= */
-
-function applyTemplate() {
-
-    const template =
-        localStorage.getItem("resumeForgeTemplate") || "modern";
-
-    const resume =
-        document.getElementById("resumePreview");
-
-    resume.classList.remove(
-        "modern-template",
-        "classic-template",
-        "minimal-template"
-    );
-
-    resume.classList.add(
-        template + "-template"
-    );
-}
-
-
-function openTemplates() {
-
-    window.location.href = "templates.html";
-
-}
+                const s
