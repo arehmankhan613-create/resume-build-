@@ -1,0 +1,4783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ResumeForge — Professional Resume Builder</title>
+
+<meta name="description"
+content="Create, customize and download a professional resume with ResumeForge.">
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+rel="stylesheet">
+
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    --primary: #4f46e5;
+
+    --primary-light: #eef2ff;
+
+    --text: #111827;
+
+    --muted: #6b7280;
+
+    --border: #e5e7eb;
+
+    --background: #f3f4f6;
+
+    --white: #ffffff;
+
+    --danger: #ef4444;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background:
+        var(--background);
+
+    color:
+        var(--text);
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.topbar {
+
+    height: 70px;
+
+    background:
+        var(--white);
+
+    border-bottom:
+        1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 24px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+.brand {
+
+    text-decoration: none;
+
+    color:
+        var(--text);
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.brand span {
+
+    color:
+        var(--primary);
+
+}
+
+
+.top-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.top-btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 9px;
+
+    padding:
+        10px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.top-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.btn-template,
+.btn-reset {
+
+    background:
+        #f3f4f6;
+
+    color:
+        #374151;
+
+}
+
+
+.btn-download {
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+}
+
+
+/* =====================================================
+   MAIN BUILDER
+===================================================== */
+
+.builder {
+
+    display: grid;
+
+    grid-template-columns:
+        430px minmax(0, 1fr);
+
+    min-height:
+        calc(100vh - 70px);
+
+}
+
+
+/* =====================================================
+   LEFT EDITOR
+===================================================== */
+
+.editor {
+
+    height:
+        calc(100vh - 70px);
+
+    overflow-y: auto;
+
+    background:
+        white;
+
+    border-right:
+        1px solid var(--border);
+
+    padding:
+        24px;
+
+}
+
+
+.editor-header {
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.editor-header h1 {
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        7px;
+
+}
+
+
+.editor-header p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
+.card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        12px;
+
+    padding:
+        18px;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+.card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        17px;
+
+}
+
+
+.card-title i {
+
+    color:
+        var(--primary);
+
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.field {
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.field:last-child {
+
+    margin-bottom:
+        0;
+
+}
+
+
+.field label {
+
+    display:
+        block;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    color:
+        #374151;
+
+    margin-bottom:
+        6px;
+
+}
+
+
+.field input,
+.field textarea,
+.field select {
+
+    width:
+        100%;
+
+    border:
+        1px solid #d1d5db;
+
+    background:
+        white;
+
+    color:
+        var(--text);
+
+    border-radius:
+        8px;
+
+    padding:
+        11px;
+
+    outline:
+        none;
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(79,70,229,.08);
+
+}
+
+
+.field textarea {
+
+    min-height:
+        105px;
+
+    resize:
+        vertical;
+
+    line-height:
+        1.55;
+
+}
+
+
+.grid-2 {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.photo-upload {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+.photo-circle {
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    border-radius:
+        50%;
+
+    object-fit:
+        cover;
+
+    border:
+        2px solid var(--border);
+
+    display:
+        none;
+
+}
+
+
+.photo-note {
+
+    font-size:
+        10px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.5;
+
+}
+
+
+.file-input {
+
+    padding:
+        8px !important;
+
+}
+
+
+/* =====================================================
+   REPEATING BOX
+===================================================== */
+
+.repeat-box {
+
+    position:
+        relative;
+
+    background:
+        #fafafa;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        9px;
+
+    padding:
+        16px;
+
+    margin-bottom:
+        11px;
+
+}
+
+
+.repeat-box .field {
+
+    padding-right:
+        35px;
+
+}
+
+
+.remove-item {
+
+    position:
+        absolute;
+
+    top:
+        10px;
+
+    right:
+        10px;
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        var(--danger);
+
+    cursor:
+        pointer;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+}
+
+
+.add-item {
+
+    width:
+        100%;
+
+    border:
+        1px dashed #9ca3af;
+
+    background:
+        #f9fafb;
+
+    color:
+        var(--primary);
+
+    border-radius:
+        8px;
+
+    padding:
+        11px;
+
+    cursor:
+        pointer;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.add-item:hover {
+
+    background:
+        var(--primary-light);
+
+}
+
+
+/* =====================================================
+   CUSTOMIZE
+===================================================== */
+
+.custom-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+}
+
+
+.color-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.color-picker {
+
+    width:
+        52px !important;
+
+    height:
+        40px;
+
+    padding:
+        3px !important;
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =====================================================
+   PREVIEW AREA
+===================================================== */
+
+.preview-area {
+
+    min-width:
+        0;
+
+    overflow:
+        auto;
+
+    padding:
+        40px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        flex-start;
+
+}
+
+
+/* =====================================================
+   A4 PAPER
+===================================================== */
+
+.resume-paper {
+
+    width:
+        794px;
+
+    min-height:
+        1123px;
+
+    flex-shrink:
+        0;
+
+    background:
+        white;
+
+    padding:
+        55px;
+
+    box-shadow:
+        0 18px 55px
+        rgba(0,0,0,.15);
+
+    color:
+        #111827;
+
+    font-family:
+        "Inter", sans-serif;
+
+}
+
+
+/* =====================================================
+   RESUME HEADER
+===================================================== */
+
+.resume-top {
+
+    border-bottom:
+        2px solid var(--primary);
+
+    padding-bottom:
+        18px;
+
+    margin-bottom:
+        23px;
+
+}
+
+
+.resume-photo {
+
+    width:
+        95px;
+
+    height:
+        95px;
+
+    border-radius:
+        50%;
+
+    object-fit:
+        cover;
+
+    border:
+        2px solid var(--primary);
+
+    display:
+        none;
+
+    margin-bottom:
+        13px;
+
+}
+
+
+.resume-name {
+
+    font-size:
+        34px;
+
+    line-height:
+        1.1;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        6px;
+
+}
+
+
+.resume-title {
+
+    color:
+        var(--primary);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.contact-row {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px 15px;
+
+}
+
+
+.contact-row span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        #4b5563;
+
+    font-size:
+        9.5px;
+
+}
+
+
+/* =====================================================
+   RESUME SECTION
+===================================================== */
+
+.resume-section {
+
+    margin-bottom:
+        21px;
+
+}
+
+
+.resume-section-title {
+
+    color:
+        var(--primary);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.2px;
+
+    border-bottom:
+        1px solid #d1d5db;
+
+    padding-bottom:
+        6px;
+
+    margin-bottom:
+        11px;
+
+}
+
+
+.resume-text {
+
+    font-size:
+        10px;
+
+    line-height:
+        1.65;
+
+    color:
+        #374151;
+
+}
+
+
+/* =====================================================
+   RESUME ITEM
+===================================================== */
+
+.resume-item {
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.resume-item:last-child {
+
+    margin-bottom:
+        0;
+
+}
+
+
+.resume-item-title {
+
+    font-size:
+        11.5px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        3px;
+
+}
+
+
+.resume-item-meta {
+
+    font-size:
+        9px;
+
+    color:
+        #6b7280;
+
+    margin-bottom:
+        4px;
+
+}
+
+
+.resume-item-description {
+
+    font-size:
+        9.7px;
+
+    line-height:
+        1.6;
+
+    color:
+        #374151;
+
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skill-list {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        6px;
+
+}
+
+
+.skill-pill {
+
+    display:
+        inline-block;
+
+    padding:
+        5px 8px;
+
+    border-radius:
+        4px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =====================================================
+   CLASSIC
+===================================================== */
+
+.classic-template {
+
+    font-family:
+        Georgia, serif;
+
+}
+
+
+.classic-template .resume-top {
+
+    text-align:
+        center;
+
+    border-bottom:
+        1px solid #111827;
+
+}
+
+
+.classic-template .resume-title {
+
+    color:
+        #111827;
+
+    font-weight:
+        400;
+
+}
+
+
+.classic-template .resume-section-title {
+
+    color:
+        #111827;
+
+    letter-spacing:
+        0;
+
+}
+
+
+.classic-template .resume-photo {
+
+    margin-left:
+        auto;
+
+    margin-right:
+        auto;
+
+}
+
+
+/* =====================================================
+   MINIMAL
+===================================================== */
+
+.minimal-template .resume-top {
+
+    border-bottom:
+        none;
+
+    padding-bottom:
+        5px;
+
+}
+
+
+.minimal-template .resume-name {
+
+    font-size:
+        38px;
+
+}
+
+
+.minimal-template .resume-title {
+
+    color:
+        #6b7280;
+
+    font-weight:
+        500;
+
+}
+
+
+.minimal-template .resume-section-title {
+
+    color:
+        #111827;
+
+    border-bottom:
+        none;
+
+    letter-spacing:
+        0;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+
+    position:
+        fixed;
+
+    right:
+        22px;
+
+    bottom:
+        22px;
+
+    z-index:
+        99999;
+
+    background:
+        #111827;
+
+    color:
+        white;
+
+    padding:
+        12px 17px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.2);
+
+    animation:
+        toastIn .2s ease;
+
+}
+
+
+@keyframes toastIn {
+
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px) {
+
+    .builder {
+
+        grid-template-columns:
+            380px minmax(0,1fr);
+
+    }
+
+    .preview-area {
+
+        padding:
+            25px;
+
+    }
+
+}
+
+
+@media(max-width:850px) {
+
+    .builder {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .editor {
+
+        height:
+            auto;
+
+        border-right:
+            none;
+
+    }
+
+    .preview-area {
+
+        justify-content:
+            flex-start;
+
+        overflow-x:
+            auto;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .topbar {
+
+        padding:
+            0 12px;
+
+    }
+
+    .brand {
+
+        font-size:
+            19px;
+
+    }
+
+    .top-btn span {
+
+        display:
+            none;
+
+    }
+
+    .top-btn {
+
+        padding:
+            10px 11px;
+
+    }
+
+    .editor {
+
+        padding:
+            15px;
+
+    }
+
+    .custom-grid,
+    .grid-2 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .preview-area {
+
+        padding:
+            15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print {
+
+    body {
+
+        background:
+            white;
+
+    }
+
+    .topbar,
+    .editor {
+
+        display:
+            none !important;
+
+    }
+
+    .builder {
+
+        display:
+            block;
+
+    }
+
+    .preview-area {
+
+        padding:
+            0;
+
+        display:
+            block;
+
+    }
+
+    .resume-paper {
+
+        box-shadow:
+            none;
+
+        margin:
+            0;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================
+     TOP BAR
+=================================================== -->
+
+<header class="topbar">
+
+    <a
+        href="index.html"
+        class="brand">
+
+        Resume<span>Forge</span>
+
+    </a>
+
+
+    <div class="top-actions">
+
+
+        <button
+            type="button"
+            class="top-btn btn-template"
+            onclick="openTemplates()">
+
+            <i class="fa-solid fa-palette"></i>
+
+            <span>Templates</span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="top-btn btn-reset"
+            onclick="resetResume()">
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            <span>Reset</span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="top-btn btn-download"
+            onclick="downloadPDF()">
+
+            <i class="fa-solid fa-download"></i>
+
+            <span>Download PDF</span>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+<!-- ===================================================
+     BUILDER
+=================================================== -->
+
+<div class="builder">
+
+
+<!-- ===================================================
+     EDITOR
+=================================================== -->
+
+<aside class="editor">
+
+
+<div class="editor-header">
+
+    <h1>
+        Build Your Resume
+    </h1>
+
+    <p>
+        Add your information below and
+        your professional resume will
+        update automatically.
+    </p>
+
+</div>
+
+
+<!-- ===================================================
+     PERSONAL INFORMATION
+=================================================== -->
+
+<section class="card">
+
+
+<h2 class="card-title">
+
+    <i class="fa-solid fa-user"></i>
+
+    Personal Information
+
+</h2>
+
+
+<div class="field">
+
+    <label>
+        Profile Photo
+    </label>
+
+
+    <input
+        id="profilePhoto"
+        class="file-input"
+        type="file"
+        accept="image/png,image/jpeg,image/webp">
+
+
+    <div
+        class="photo-upload"
+        style="margin-top:10px;">
+
+
+        <img
+            id="photoThumb"
+            class="photo-circle"
+            alt="Profile photo">
+
+
+        <div class="photo-note">
+
+            Recommended: square image<br>
+            JPG, PNG or WebP
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        id="removePhotoBtn"
+        type="button"
+        class="add-item"
+        style="margin-top:10px;">
+
+        Remove Photo
+
+    </button>
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        Full Name
+    </label>
+
+    <input
+        id="name"
+        type="text"
+        placeholder="e.g. Abdur Rehman Khan">
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        Professional Title
+    </label>
+
+    <input
+        id="title"
+        type="text"
+        placeholder="e.g. Web Developer">
+
+</div>
+
+
+<div class="grid-2">
+
+
+<div class="field">
+
+    <label>
+        Email
+    </label>
+
+    <input
+        id="email"
+        type="email"
+        placeholder="you@example.com">
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        Phone
+    </label>
+
+    <input
+        id="phone"
+        type="text"
+        placeholder="+91 9876543210">
+
+</div>
+
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        Location
+    </label>
+
+    <input
+        id="location"
+        type="text"
+        placeholder="Mumbai, India">
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        LinkedIn / Portfolio
+    </label>
+
+    <input
+        id="website"
+        type="text"
+        placeholder="linkedin.com/in/yourname">
+
+</div>
+
+
+</section>
+
+
+<!-- ===================================================
+     CUSTOMIZATION
+=================================================== -->
+
+<section class="card">
+
+
+<h2 class="card-title">
+
+    <i class="fa-solid fa-sliders"></i>
+
+    Customize
+
+</h2>
+
+
+<div class="custom-grid">
+
+
+<div class="field">
+
+    <label>
+        Template
+    </label>
+
+    <select id="templateSelect">
+
+        <option value="modern">
+            Modern
+        </option>
+
+        <option value="classic">
+            Classic
+        </option>
+
+        <option value="minimal">
+            Minimal
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        Font
+    </label>
+
+    <select id="fontSelect">
+
+        <option value="Inter">
+            Inter
+        </option>
+
+        <option value="Poppins">
+            Poppins
+        </option>
+
+        <option value="Roboto">
+            Roboto
+        </option>
+
+        <option value="Georgia">
+            Georgia
+        </option>
+
+    </select>
+
+</div>
+
+
+</div>
+
+
+<div class="field">
+
+    <label>
+        Accent Color
+    </label>
+
+
+    <div class="color-row">
+
+        <input
+            id="accentColor"
+            class="color-picker"
+            type="color"
+            value="#4f46e5">
+
+
+        <span class="photo-note">
+            Choose your resume theme color.
+        </span>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- ===================================================
+     SUMMARY
+=================================================== -->
+
+<section class="card">
+
+
+<h2 class="card-title">
+
+    <i class="fa-solid fa-file-lines"></i>
+
+    Professional Summary
+
+</h2>
+
+
+<div class="field">
+
+    <textarea
+        id="summary"
+        placeholder="Write 2–4 lines about yourself, your experience, skills and career goals."></textarea>
+
+</div>
+
+
+</section>
+
+
+<!-- ===================================================
+     EXPERIENCE
+=================================================== -->
+
+<section class="card">
+
+
+<h<script>
+
+/* =====================================================
+   RESUMEFORGE — CORE VARIABLES
+===================================================== */
+
+let experienceCount = 0;
+let educationCount = 0;
+let projectCount = 0;
+
+let currentPhoto = "";
+
+
+/* =====================================================
+   ELEMENT HELPER
+===================================================== */
+
+function $(id) {
+
+    return document.getElementById(id);
+
+}
+
+
+/* =====================================================
+   VALUE HELPER
+===================================================== */
+
+function getValue(id) {
+
+    const element = $(id);
+
+    if (!element) {
+        return "";
+    }
+
+    return element.value.trim();
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+    if (value === null || value === undefined) {
+        return "";
+    }
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =====================================================
+   SHOW TOAST
+===================================================== */
+
+function showToast(message) {
+
+    const oldToast =
+        document.querySelector(".toast");
+
+    if (oldToast) {
+        oldToast.remove();
+    }
+
+    const toast =
+        document.createElement("div");
+
+    toast.className = "toast";
+
+    toast.textContent = message;
+
+    document.body.appendChild(toast);
+
+    setTimeout(function () {
+
+        if (toast.parentNode) {
+            toast.remove();
+        }
+
+    }, 2200);
+
+}
+
+
+/* =====================================================
+   UPDATE BASIC INFORMATION
+===================================================== */
+
+function updateBasicInfo() {
+
+    const name =
+        getValue("name");
+
+    const title =
+        getValue("title");
+
+    const email =
+        getValue("email");
+
+    const phone =
+        getValue("phone");
+
+    const location =
+        getValue("location");
+
+    const website =
+        getValue("website");
+
+    const summary =
+        getValue("summary");
+
+
+    $("previewName").textContent =
+        name || "Your Name";
+
+
+    $("previewTitle").textContent =
+        title || "Professional Title";
+
+
+    $("previewEmail").innerHTML = `
+
+        <i class="fa-solid fa-envelope"></i>
+
+        ${escapeHTML(
+            email || "email@example.com"
+        )}
+
+    `;
+
+
+    $("previewPhone").innerHTML = `
+
+        <i class="fa-solid fa-phone"></i>
+
+        ${escapeHTML(
+            phone || "+91 0000000000"
+        )}
+
+    `;
+
+
+    $("previewLocation").innerHTML = `
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        ${escapeHTML(
+            location || "Your Location"
+        )}
+
+    `;
+
+
+    $("previewWebsite").innerHTML = `
+
+        <i class="fa-solid fa-link"></i>
+
+        ${escapeHTML(
+            website || "Portfolio"
+        )}
+
+    `;
+
+
+    $("previewSummary").textContent =
+        summary ||
+        "Your professional summary will appear here.";
+
+}
+
+
+/* =====================================================
+   CERTIFICATIONS
+===================================================== */
+
+function updateCertifications() {
+
+    const container =
+        $("previewCertifications");
+
+    const value =
+        getValue("certifications");
+
+
+    if (!value) {
+
+        container.textContent =
+            "—";
+
+        return;
+
+    }
+
+
+    const items =
+        value
+            .split(",")
+            .map(item => item.trim())
+            .filter(Boolean);
+
+
+    container.innerHTML =
+        items
+            .map(
+                item =>
+                    `• ${escapeHTML(item)}`
+            )
+            .join("<br>");
+
+}
+
+
+/* =====================================================
+   LANGUAGES
+===================================================== */
+
+function updateLanguages() {
+
+    const container =
+        $("previewLanguages");
+
+    const value =
+        getValue("languages");
+
+
+    if (!value) {
+
+        container.textContent =
+            "—";
+
+        return;
+
+    }
+
+
+    const items =
+        value
+            .split(",")
+            .map(item => item.trim())
+            .filter(Boolean);
+
+
+    container.innerHTML =
+        items
+            .map(
+                item =>
+                    `• ${escapeHTML(item)}`
+            )
+            .join("<br>");
+
+}
+
+
+/* =====================================================
+   UPDATE SKILLS
+===================================================== */
+
+function updateSkills() {
+
+    const container =
+        $("previewSkills");
+
+    const value =
+        getValue("skills");
+
+
+    if (!value) {
+
+        container.innerHTML = `
+
+            <span class="skill-pill">
+                Your Skills
+            </span>
+
+        `;
+
+        return;
+
+    }
+
+
+    const skills =
+        value
+            .split(",")
+            .map(skill => skill.trim())
+            .filter(Boolean);
+
+
+    container.innerHTML = "";
+
+
+    skills.forEach(function(skill) {
+
+        const pill =
+            document.createElement("span");
+
+        pill.className =
+            "skill-pill";
+
+        pill.textContent =
+            skill;
+
+        container.appendChild(pill);
+
+    });
+
+}
+
+
+/* =====================================================
+   ADD EXPERIENCE
+===================================================== */
+
+function addExperience(data = {}) {
+
+    experienceCount++;
+
+
+    const id =
+        experienceCount;
+
+
+    const container =
+        $("experienceContainer");
+
+
+    const box =
+        document.createElement("div");
+
+
+    box.className =
+        "repeat-box";
+
+
+    box.dataset.id =
+        id;
+
+
+    box.innerHTML = `
+
+        <button
+            type="button"
+            class="remove-item"
+            onclick="removeExperience(${id})">
+
+            <i class="fa-solid fa-trash"></i>
+            Remove
+
+        </button>
+
+
+        <div class="field">
+
+            <label>
+                Job Title
+            </label>
+
+            <input
+                type="text"
+                class="exp-job"
+                placeholder="Web Developer"
+                value="${escapeHTML(
+                    data.job || ""
+                )}">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Company
+            </label>
+
+            <input
+                type="text"
+                class="exp-company"
+                placeholder="ABC Technologies"
+                value="${escapeHTML(
+                    data.company || ""
+                )}">
+
+        </div>
+
+
+        <div class="grid-2">
+
+            <div class="field">
+
+                <label>
+                    Start Date
+                </label>
+
+                <input
+                    type="text"
+                    class="exp-start"
+                    placeholder="Jan 2025"
+                    value="${escapeHTML(
+                        data.start || ""
+                    )}">
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    End Date
+                </label>
+
+                <input
+                    type="text"
+                    class="exp-end"
+                    placeholder="Present"
+                    value="${escapeHTML(
+                        data.end || ""
+                    )}">
+
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                class="exp-description"
+                placeholder="Describe your responsibilities and achievements...">${escapeHTML(
+                    data.description || ""
+                )}</textarea>
+
+        </div>
+
+    `;
+
+
+    container.appendChild(box);
+
+
+    attachLiveEvents(box);
+
+
+    updateResume();
+
+}
+
+
+/* =====================================================
+   REMOVE EXPERIENCE
+===================================================== */
+
+function removeExperience(id) {
+
+    const box =
+        document.querySelector(
+            `#experienceContainer .repeat-box[data-id="${id}"]`
+        );
+
+
+    if (!box) {
+        return;
+    }
+
+
+    box.remove();
+
+
+    updateResume();
+
+
+    saveData();
+
+
+}
+
+
+/* =====================================================
+   UPDATE EXPERIENCE PREVIEW
+===================================================== */
+
+function updateExperience() {
+
+    const container =
+        $("previewExperience");
+
+
+    const boxes =
+        document.querySelectorAll(
+            "#experienceContainer .repeat-box"
+        );
+
+
+    if (!boxes.length) {
+
+        container.innerHTML = `
+
+            <p class="resume-text">
+                Add your experience from the editor.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    boxes.forEach(function(box) {
+
+        const job =
+            box.querySelector(
+                ".exp-job"
+            )?.value.trim();
+
+
+        const company =
+            box.querySelector(
+                ".exp-company"
+            )?.value.trim();
+
+
+        const start =
+            box.querySelector(
+                ".exp-start"
+            )?.value.trim();
+
+
+        const end =
+            box.querySelector(
+                ".exp-end"
+            )?.value.trim();
+
+
+        const description =
+            box.querySelector(
+                ".exp-description"
+            )?.value.trim();
+
+
+        if (
+            !job &&
+            !company &&
+            !start &&
+            !end &&
+            !description
+        ) {
+
+            return;
+
+        }
+
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "resume-item";
+
+
+        const dates =
+            start || end
+            ? `${escapeHTML(start)} - ${escapeHTML(end)}`
+            : "";
+
+
+        item.innerHTML = `
+
+            <div class="resume-item-title">
+
+                ${escapeHTML(
+                    job || "Job Title"
+                )}
+
+            </div>
+
+
+            <div class="resume-item-meta">
+
+                ${escapeHTML(
+                    company || "Company"
+                )}
+
+                ${
+                    dates
+                    ? ` • ${dates}`
+                    : ""
+                }
+
+            </div>
+
+
+            ${
+                description
+                ? `
+                    <div class="resume-item-description">
+                        ${escapeHTML(
+                            description
+                        ).replace(
+                            /\n/g,
+                            "<br>"
+                        )}
+                    </div>
+                `
+                : ""
+            }
+
+        `;
+
+
+        container.appendChild(item);
+
+    });
+
+
+    if (!container.innerHTML.trim()) {
+
+        container.innerHTML = `
+
+            <p class="resume-text">
+                Add your experience from the editor.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   ADD EDUCATION
+===================================================== */
+
+function addEducation(data = {}) {
+
+    educationCount++;
+
+
+    const id =
+        educationCount;
+
+
+    const container =
+        $("educationContainer");
+
+
+    const box =
+        document.createElement("div");
+
+
+    box.className =
+        "repeat-box";
+
+
+    box.dataset.id =
+        id;
+
+
+    box.innerHTML = `
+
+        <button
+            type="button"
+            class="remove-item"
+            onclick="removeEducation(${id})">
+
+            <i class="fa-solid fa-trash"></i>
+            Remove
+
+        </button>
+
+
+        <div class="field">
+
+            <label>
+                Degree / Course
+            </label>
+
+            <input
+                type="text"
+                class="edu-degree"
+                placeholder="BSc Information Technology"
+                value="${escapeHTML(
+                    data.degree || ""
+                )}">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                College / University
+            </label>
+
+            <input
+                type="text"
+                class="edu-school"
+                placeholder="Mumbai University"
+                value="${escapeHTML(
+                    data.school || ""
+                )}">
+
+        </div>
+
+
+        <div class="grid-2">
+
+            <div class="field">
+
+                <label>
+                    Start Year
+                </label>
+
+                <input
+                    type="text"
+                    class="edu-start"
+                    placeholder="2023"
+                    value="${escapeHTML(
+                        data.start || ""
+                    )}">
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    End Year
+                </label>
+
+                <input
+                    type="text"
+                    class="edu-end"
+                    placeholder="2026"
+                    value="${escapeHTML(
+                        data.end || ""
+                    )}">
+
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Details
+            </label>
+
+            <textarea
+                class="edu-details"
+                placeholder="Percentage, achievements or relevant details...">${escapeHTML(
+                    data.details || ""
+                )}</textarea>
+
+        </div>
+
+    `;
+
+
+    container.appendChild(box);
+
+
+    attachLiveEvents(box);
+
+
+    updateResume();
+
+}
+
+
+/* =====================================================
+   REMOVE EDUCATION
+===================================================== */
+
+function removeEducation(id) {
+
+    const box =
+        document.querySelector(
+            `#educationContainer .repeat-box[data-id="${id}"]`
+        );
+
+
+    if (!box) {
+        return;
+    }
+
+
+    box.remove();
+
+
+    updateResume();
+
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   UPDATE EDUCATION
+===================================================== */
+
+function updateEducation() {
+
+    const container =
+        $("previewEducation");
+
+
+    const boxes =
+        document.querySelectorAll(
+            "#educationContainer .repeat-box"
+        );
+
+
+    if (!boxes.length) {
+
+        container.innerHTML = `
+
+            <p class="resume-text">
+                Add your education from the editor.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    boxes.forEach(function(box) {
+
+        const degree =
+            box.querySelector(
+                ".edu-degree"
+            )?.value.trim();
+
+
+        const school =
+            box.querySelector(
+                ".edu-school"
+            )?.value.trim();
+
+
+        const start =
+            box.querySelector(
+                ".edu-start"
+            )?.value.trim();
+
+
+        const end =
+            box.querySelector(
+                ".edu-end"
+            )?.value.trim();
+
+
+        const details =
+            box.querySelector(
+                ".edu-details"
+            )?.value.trim();
+
+
+        if (
+            !degree &&
+            !school &&
+            !start &&
+            !end &&
+            !details
+        ) {
+
+            return;
+
+        }
+
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "resume-item";
+
+
+        const dates =
+            start || end
+            ? `${escapeHTML(start)} - ${escapeHTML(end)}`
+            : "";
+
+
+        item.innerHTML = `
+
+            <div class="resume-item-title">
+
+                ${escapeHTML(
+                    degree ||
+                    "Degree / Course"
+                )}
+
+            </div>
+
+
+            <div class="resume-item-meta">
+
+                ${escapeHTML(
+                    school ||
+                    "College / University"
+                )}
+
+                ${
+                    dates
+                    ? ` • ${dates}`
+                    : ""
+                }
+
+            </div>
+
+
+            ${
+                details
+                ? `
+                    <div class="resume-item-description">
+                        ${escapeHTML(
+                            details
+                        ).replace(
+                            /\n/g,
+                            "<br>"
+                        )}
+                    </div>
+                `
+                : ""
+            }
+
+        `;
+
+
+        container.appendChild(item);
+
+    });
+
+
+    if (!container.innerHTML.trim()) {
+
+        container.innerHTML = `
+
+            <p class="resume-text">
+                Add your education from the editor.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   ADD PROJECT
+===================================================== */
+
+function addProject(data = {}) {
+
+    projectCount++;
+
+
+    const id =
+        projectCount;
+
+
+    const container =
+        $("projectContainer");
+
+
+    const box =
+        document.createElement("div");
+
+
+    box.className =
+        "repeat-box";
+
+
+    box.dataset.id =
+        id;
+
+
+    box.innerHTML = `
+
+        <button
+            type="button"
+            class="remove-item"
+            onclick="removeProject(${id})">
+
+            <i class="fa-solid fa-trash"></i>
+            Remove
+
+        </button>
+
+
+        <div class="field">
+
+            <label>
+                Project Name
+            </label>
+
+            <input
+                type="text"
+                class="project-name"
+                placeholder="E-Commerce Website"
+                value="${escapeHTML(
+                    data.name || ""
+                )}">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Technologies
+            </label>
+
+            <input
+                type="text"
+                class="project-tech"
+                placeholder="HTML, CSS, JavaScript"
+                value="${escapeHTML(
+                    data.tech || ""
+                )}">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Project Description
+            </label>
+
+            <textarea
+                class="project-description"
+                placeholder="Describe what you built and the technologies used...">${escapeHTML(
+                    data.description || ""
+                )}</textarea>
+
+        </div>
+
+    `;
+
+
+    container.appendChild(box);
+
+
+    attachLiveEvents(box);
+
+
+    updateResume();
+
+}
+
+
+/* =====================================================
+   REMOVE PROJECT
+===================================================== */
+
+function removeProject(id) {
+
+    const box =
+        document.querySelector(
+            `#projectContainer .repeat-box[data-id="${id}"]`
+        );
+
+
+    if (!box) {
+        return;
+    }
+
+
+    box.remove();
+
+
+    updateResume();
+
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   UPDATE PROJECTS
+===================================================== */
+
+function updateProjects() {
+
+    const container =
+        $("previewProjects");
+
+
+    const boxes =
+        document.querySelectorAll(
+            "#projectContainer .repeat-box"
+        );
+
+
+    if (!boxes.length) {
+
+        container.innerHTML = `
+
+            <p class="resume-text">
+                Add your projects from the editor.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    boxes.forEach(function(box) {
+
+        const name =
+            box.querySelector(
+                ".project-name"
+            )?.value.trim();
+
+
+        const tech =
+            box.querySelector(
+                ".project-tech"
+            )?.value.trim();
+
+
+        const description =
+            box.querySelector(
+                ".project-description"
+            )?.value.trim();
+
+
+        if (
+            !name &&
+            !tech &&
+            !description
+        )/* =====================================================
+   LIVE EVENTS
+===================================================== */
+
+function attachLiveEvents(container) {
+
+    const fields =
+        container.querySelectorAll(
+            "input, textarea, select"
+        );
+
+
+    fields.forEach(function(field) {
+
+        field.addEventListener(
+            "input",
+            function() {
+
+                updateResume();
+
+            }
+        );
+
+
+        field.addEventListener(
+            "change",
+            function() {
+
+                updateResume();
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   UPDATE EVERYTHING
+===================================================== */
+
+function updateResume() {
+
+    updateBasicInfo();
+
+    updateExperience();
+
+    updateEducation();
+
+    updateSkills();
+
+    updateProjects();
+
+    updateCertifications();
+
+    updateLanguages();
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   PHOTO UPLOAD
+===================================================== */
+
+function handlePhotoUpload(event) {
+
+    const file =
+        event.target.files[0];
+
+
+    if (!file) {
+        return;
+    }
+
+
+    if (!file.type.startsWith("image/")) {
+
+        showToast(
+            "Please select an image file."
+        );
+
+        event.target.value = "";
+
+        return;
+
+    }
+
+
+    /*
+       Maximum 5 MB
+    */
+
+    if (file.size > 5 * 1024 * 1024) {
+
+        showToast(
+            "Photo must be smaller than 5 MB."
+        );
+
+        event.target.value = "";
+
+        return;
+
+    }
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload = function(e) {
+
+        currentPhoto =
+            e.target.result;
+
+
+        $("photoThumb").src =
+            currentPhoto;
+
+
+        $("photoThumb").style.display =
+            "block";
+
+
+        $("previewPhoto").src =
+            currentPhoto;
+
+
+        $("previewPhoto").style.display =
+            "block";
+
+
+        saveData();
+
+
+        showToast(
+            "Profile photo added."
+        );
+
+    };
+
+
+    reader.onerror = function() {
+
+        showToast(
+            "Unable to read this photo."
+        );
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* =====================================================
+   REMOVE PHOTO
+===================================================== */
+
+function removePhoto() {
+
+    currentPhoto = "";
+
+
+    $("profilePhoto").value =
+        "";
+
+
+    $("photoThumb").src =
+        "";
+
+
+    $("photoThumb").style.display =
+        "none";
+
+
+    $("previewPhoto").src =
+        "";
+
+
+    $("previewPhoto").style.display =
+        "none";
+
+
+    saveData();
+
+
+    showToast(
+        "Profile photo removed."
+    );
+
+}
+
+
+/* =====================================================
+   TEMPLATE CHANGE
+===================================================== */
+
+function applyTemplate(template) {
+
+    const resume =
+        $("resumePreview");
+
+
+    resume.classList.remove(
+        "modern-template",
+        "classic-template",
+        "minimal-template"
+    );
+
+
+    if (
+        template !== "classic" &&
+        template !== "minimal"
+    ) {
+
+        template =
+            "modern";
+
+    }
+
+
+    resume.classList.add(
+        template + "-template"
+    );
+
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   FONT CHANGE
+===================================================== */
+
+function applyFont(font) {
+
+    const resume =
+        $("resumePreview");
+
+
+    const allowedFonts = [
+
+        "Inter",
+        "Poppins",
+        "Roboto",
+        "Georgia"
+
+    ];
+
+
+    if (
+        !allowedFonts.includes(font)
+    ) {
+
+        font =
+            "Inter";
+
+    }
+
+
+    resume.style.fontFamily =
+        `"${font}", sans-serif`;
+
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   COLOR CHANGE
+===================================================== */
+
+function applyColor(color) {
+
+    /*
+       Basic color validation.
+    */
+
+    if (
+        !/^#[0-9A-F]{6}$/i.test(color)
+    ) {
+
+        color =
+            "#4f46e5";
+
+    }
+
+
+    document.documentElement
+        .style
+        .setProperty(
+            "--primary",
+            color
+        );
+
+
+    /*
+       Create a light version
+       of the selected color.
+    */
+
+    const lightColor =
+        makeRGBA(
+            color,
+            0.10
+        );
+
+
+    document.documentElement
+        .style
+        .setProperty(
+            "--primary-light",
+            lightColor
+        );
+
+
+    saveData();
+
+}
+
+
+/* =====================================================
+   COLOR → RGBA
+===================================================== */
+
+function makeRGBA(hex, alpha) {
+
+    let clean =
+        hex.replace("#", "");
+
+
+    if (clean.length === 3) {
+
+        clean =
+            clean
+                .split("")
+                .map(function(char) {
+                    return char + char;
+                })
+                .join("");
+
+    }
+
+
+    const r =
+        parseInt(
+            clean.substring(0, 2),
+            16
+        );
+
+
+    const g =
+        parseInt(
+            clean.substring(2, 4),
+            16
+        );
+
+
+    const b =
+        parseInt(
+            clean.substring(4, 6),
+            16
+        );
+
+
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+
+}
+
+
+/* =====================================================
+   OPEN TEMPLATES
+===================================================== */
+
+function openTemplates() {
+
+    /*
+       If templates.html exists,
+       open it.
+
+       Otherwise show a useful
+       message instead of breaking.
+    */
+
+    window.location.href =
+        "templates.html";
+
+}
+
+
+/* =====================================================
+   RESET RESUME
+===================================================== */
+
+function resetResume() {
+
+    const confirmReset =
+        confirm(
+            "Are you sure you want to reset your resume? All saved information will be removed."
+        );
+
+
+    if (!confirmReset) {
+        return;
+    }
+
+
+    localStorage.removeItem(
+        "resumeForgeData"
+    );
+
+
+    location.reload();
+
+}
+
+
+/* =====================================================
+   SAVE DATA
+===================================================== */
+
+function saveData() {
+
+    /*
+       Don't try to save before
+       the page is initialized.
+    */
+
+    if (!$("name")) {
+        return;
+    }
+
+
+    const data = {
+
+        name:
+            getValue("name"),
+
+        title:
+            getValue("title"),
+
+        email:
+            getValue("email"),
+
+        phone:
+            getValue("phone"),
+
+        location:
+            getValue("location"),
+
+        website:
+            getValue("website"),
+
+        summary:
+            getValue("summary"),
+
+        skills:
+            getValue("skills"),
+
+        certifications:
+            getValue("certifications"),
+
+        languages:
+            getValue("languages"),
+
+        template:
+            $("templateSelect")
+                ? $("templateSelect").value
+                : "modern",
+
+        font:
+            $("fontSelect")
+                ? $("fontSelect").value
+                : "Inter",
+
+        accent:
+            $("accentColor")
+                ? $("accentColor").value
+                : "#4f46e5",
+
+        photo:
+            currentPhoto,
+
+        experience:
+            collectExperience(),
+
+        education:
+            collectEducation(),
+
+        projects:
+            collectProjects()
+
+    };
+
+
+    try {
+
+        localStorage.setItem(
+            "resumeForgeData",
+            JSON.stringify(data)
+        );
+
+    } catch(error) {
+
+        console.warn(
+            "Resume data could not be saved:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   COLLECT EXPERIENCE
+===================================================== */
+
+function collectExperience() {
+
+    const boxes =
+        document.querySelectorAll(
+            "#experienceContainer .repeat-box"
+        );
+
+
+    return Array.from(boxes)
+        .map(function(box) {
+
+            return {
+
+                job:
+                    box.querySelector(
+                        ".exp-job"
+                    )?.value || "",
+
+                company:
+                    box.querySelector(
+                        ".exp-company"
+                    )?.value || "",
+
+                start:
+                    box.querySelector(
+                        ".exp-start"
+                    )?.value || "",
+
+                end:
+                    box.querySelector(
+                        ".exp-end"
+                    )?.value || "",
+
+                description:
+                    box.querySelector(
+                        ".exp-description"
+                    )?.value || ""
+
+            };
+
+        });
+
+}
+
+
+/* =====================================================
+   COLLECT EDUCATION
+===================================================== */
+
+function collectEducation() {
+
+    const boxes =
+        document.querySelectorAll(
+            "#educationContainer .repeat-box"
+        );
+
+
+    return Array.from(boxes)
+        .map(function(box) {
+
+            return {
+
+                degree:
+                    box.querySelector(
+                        ".edu-degree"
+                    )?.value || "",
+
+                school:
+                    box.querySelector(
+                        ".edu-school"
+                    )?.value || "",
+
+                start:
+                    box.querySelector(
+                        ".edu-start"
+                    )?.value || "",
+
+                end:
+                    box.querySelector(
+                        ".edu-end"
+                    )?.value || "",
+
+                details:
+                    box.querySelector(
+                        ".edu-details"
+                    )?.value || ""
+
+            };
+
+        });
+
+}
+
+
+/* =====================================================
+   COLLECT PROJECTS
+===================================================== */
+
+function collectProjects() {
+
+    const boxes =
+        document.querySelectorAll(
+            "#projectContainer .repeat-box"
+        );
+
+
+    return Array.from(boxes)
+        .map(function(box) {
+
+            return {
+
+                name:
+                    box.querySelector(
+                        ".project-name"
+                    )?.value || "",
+
+                tech:
+                    box.querySelector(
+                        ".project-tech"
+                    )?.value || "",
+
+                description:
+                    box.querySelector(
+                        ".project-description"
+                    )?.value || ""
+
+            };
+
+        });
+
+}
+
+
+/* =====================================================
+   LOAD DATA
+===================================================== */
+
+function loadData() {
+
+    const saved =
+        localStorage.getItem(
+            "resumeForgeData"
+        );
+
+
+    if (!saved) {
+
+        addExperience();
+
+        addEducation();
+
+        addProject();
+
+        updateResume();
+
+        return;
+
+    }
+
+
+    let data;
+
+
+    try {
+
+        data =
+            JSON.parse(saved);
+
+    } catch(error) {
+
+        console.warn(
+            "Invalid saved resume data."
+        );
+
+
+        localStorage.removeItem(
+            "resumeForgeData"
+        );
+
+
+        addExperience();
+
+        addEducation();
+
+        addProject();
+
+        updateResume();
+
+        return;
+
+    }
+
+
+    /*
+       Basic information
+    */
+
+    $("name").value =
+        data.name || "";
+
+    $("title").value =
+        data.title || "";
+
+    $("email").value =
+        data.email || "";
+
+    $("phone").value =
+        data.phone || "";
+
+    $("location").value =
+        data.location || "";
+
+    $("website").value =
+        data.website || "";
+
+    $("summary").value =
+        data.summary || "";
+
+    $("skills").value =
+        data.skills || "";
+
+    $("certifications").value =
+        data.certifications || "";
+
+    $("languages").value =
+        data.languages || "";
+
+
+    /*
+       Template
+    */
+
+    const template =
+        data.template || "modern";
+
+
+    $("templateSelect").value =
+        template;
+
+
+    applyTemplate(
+        template
+    );
+
+
+    /*
+       Font
+    */
+
+    const font =
+        data.font || "Inter";
+
+
+    $("fontSelect").value =
+        font;
+
+
+    applyFont(
+        font
+    );
+
+
+    /*
+       Accent
+    */
+
+    const accent =
+        data.accent || "#4f46e5";
+
+
+    $("accentColor").value =
+        accent;
+
+
+    applyColor(
+        accent
+    );
+
+
+    /*
+       Photo
+    */
+
+    if (data.photo) {
+
+        currentPhoto =
+            data.photo;
+
+
+        $("photoThumb").src =
+            currentPhoto;
+
+
+        $("photoThumb").style.display =
+            "block";
+
+
+        $("previewPhoto").src =
+            currentPhoto;
+
+
+        $("previewPhoto").style.display =
+            "block";
+
+    }
+
+
+    /*
+       Clear repeating sections
+       before loading saved items.
+    */
+
+    $("experienceContainer")
+        .innerHTML = "";
+
+    $("educationContainer")
+        .innerHTML = "";
+
+    $("projectContainer")
+        .innerHTML = "";
+
+
+    experienceCount = 0;
+
+    educationCount = 0;
+
+    projectCount = 0;
+
+
+    /*
+       Experience
+    */
+
+    if (
+        Array.isArray(
+            data.experience
+        ) &&
+        data.experience.length
+    ) {
+
+        data.experience.forEach(
+            function(item) {
+
+                addExperience(item);
+
+            }
+        );
+
+    } else {
+
+        addExperience();
+
+    }
+
+
+    /*
+       Education
+    */
+
+    if (
+        Array.isArray(
+            data.education
+        ) &&
+        data.education.length
+    ) {
+
+        data.education.forEach(
+            function(item) {
+
+                addEducation(item);
+
+            }
+        );
+
+    } else {
+
+        addEducation();
+
+    }
+
+
+    /*
+       Projects
+    */
+
+    if (
+        Array.isArray(
+            data.projects
+        ) &&
+        data.projects.length
+    ) {
+
+        data.projects.forEach(
+            function(item) {
+
+                addProject(item);
+
+            }
+        );
+
+    } else {
+
+        addProject();
+
+    }
+
+
+    updateResume();
+
+}
+
+
+/* =====================================================
+   KEYBOARD SAVE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            (event.ctrlKey ||
+             event.metaKey) &&
+            event.key.toLowerCase() === "s"
+        ) {
+
+            event.preventDefault();
+
+            saveData();
+
+            showToast(
+                "Resume saved!"
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   AUTO SAVE
+===================================================== */
+
+let saveTimer;
+
+
+document.addEventListener(
+    "input",
+    function() {
+
+        clearTimeout(
+            saveTimer
+        );
+
+
+        saveTimer =
+            setTimeout(
+                function() {
+
+                    saveData();
+
+                },
+                400
+            );
+
+    }
+);
+
+
+/* =====================================================
+   END PART 3
+===================================================== *//* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+function initializeButtons() {
+
+    /*
+       ADD EXPERIENCE
+    */
+
+    const addExperienceBtn =
+        $("addExperienceBtn");
+
+
+    if (addExperienceBtn) {
+
+        addExperienceBtn.addEventListener(
+            "click",
+            function() {
+
+                addExperience();
+
+                showToast(
+                    "Experience added."
+                );
+
+            }
+        );
+
+    }
+
+
+    /*
+       ADD EDUCATION
+    */
+
+    const addEducationBtn =
+        $("addEducationBtn");
+
+
+    if (addEducationBtn) {
+
+        addEducationBtn.addEventListener(
+            "click",
+            function() {
+
+                addEducation();
+
+                showToast(
+                    "Education added."
+                );
+
+            }
+        );
+
+    }
+
+
+    /*
+       ADD PROJECT
+    */
+
+    const addProjectBtn =
+        $("addProjectBtn");
+
+
+    if (addProjectBtn) {
+
+        addProjectBtn.addEventListener(
+            "click",
+            function() {
+
+                addProject();
+
+                showToast(
+                    "Project added."
+                );
+
+            }
+        );
+
+    }
+
+
+    /*
+       PHOTO
+    */
+
+    const photoInput =
+        $("profilePhoto");
+
+
+    if (photoInput) {
+
+        photoInput.addEventListener(
+            "change",
+            handlePhotoUpload
+        );
+
+    }
+
+
+    /*
+       REMOVE PHOTO
+    */
+
+    const removePhotoBtn =
+        $("removePhotoBtn");
+
+
+    if (removePhotoBtn) {
+
+        removePhotoBtn.addEventListener(
+            "click",
+            removePhoto
+        );
+
+    }
+
+
+    /*
+       TEMPLATE
+    */
+
+    const templateSelect =
+        $("templateSelect");
+
+
+    if (templateSelect) {
+
+        templateSelect.addEventListener(
+            "change",
+            function() {
+
+                applyTemplate(
+                    this.value
+                );
+
+                updateResume();
+
+            }
+        );
+
+    }
+
+
+    /*
+       FONT
+    */
+
+    const fontSelect =
+        $("fontSelect");
+
+
+    if (fontSelect) {
+
+        fontSelect.addEventListener(
+            "change",
+            function() {
+
+                applyFont(
+                    this.value
+                );
+
+                updateResume();
+
+            }
+        );
+
+    }
+
+
+    /*
+       ACCENT COLOR
+    */
+
+    const accentColor =
+        $("accentColor");
+
+
+    if (accentColor) {
+
+        accentColor.addEventListener(
+            "input",
+            function() {
+
+                applyColor(
+                    this.value
+                );
+
+                updateResume();
+
+            }
+        );
+
+    }
+
+
+    /*
+       BASIC INPUTS
+    */
+
+    const basicInputs = [
+
+        "name",
+        "title",
+        "email",
+        "phone",
+        "location",
+        "website",
+        "summary",
+        "skills",
+        "certifications",
+        "languages"
+
+    ];
+
+
+    basicInputs.forEach(
+        function(id) {
+
+            const element =
+                $(id);
+
+
+            if (!element) {
+                return;
+            }
+
+
+            element.addEventListener(
+                "input",
+                function() {
+
+                    updateResume();
+
+                }
+            );
+
+
+            element.addEventListener(
+                "change",
+                function() {
+
+                    updateResume();
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CHECK PDF LIBRARY
+===================================================== */
+
+function isPDFLibraryReady() {
+
+    return (
+        typeof window.html2canvas === "function" &&
+        window.jspdf &&
+        typeof window.jspdf.jsPDF === "function"
+    );
+
+}
+
+
+/* =====================================================
+   LOAD SCRIPT DYNAMICALLY
+===================================================== */
+
+function loadScript(src) {
+
+    return new Promise(
+        function(resolve, reject) {
+
+            /*
+               Prevent duplicate loading.
+            */
+
+            const existing =
+                document.querySelector(
+                    `script[src="${src}"]`
+                );
+
+
+            if (existing) {
+
+                /*
+                   Give the existing script
+                   a moment to initialize.
+                */
+
+                if (
+                    src.includes("html2canvas") &&
+                    typeof window.html2canvas === "function"
+                ) {
+
+                    resolve();
+
+                    return;
+
+                }
+
+
+                if (
+                    src.includes("jspdf") &&
+                    window.jspdf &&
+                    typeof window.jspdf.jsPDF === "function"
+                ) {
+
+                    resolve();
+
+                    return;
+
+                }
+
+            }
+
+
+            const script =
+                document.createElement("script");
+
+
+            script.src =
+                src;
+
+
+            script.async =
+                true;
+
+
+            script.onload =
+                function() {
+
+                    resolve();
+
+                };
+
+
+            script.onerror =
+                function() {
+
+                    reject(
+                        new Error(
+                            "Unable to load PDF library."
+                        )
+                    );
+
+                };
+
+
+            document.head.appendChild(
+                script
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   LOAD PDF LIBRARIES
+===================================================== */
+
+async function ensurePDFLibraries() {
+
+    /*
+       html2canvas
+    */
+
+    if (
+        typeof window.html2canvas !== "function"
+    ) {
+
+        await loadScript(
+            "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        );
+
+    }
+
+
+    /*
+       jsPDF
+    */
+
+    if (
+        !window.jspdf ||
+        typeof window.jspdf.jsPDF !== "function"
+    ) {
+
+        await loadScript(
+            "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        );
+
+    }
+
+
+    if (!isPDFLibraryReady()) {
+
+        throw new Error(
+            "PDF library failed to initialize."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CLEAN RESUME BEFORE PDF
+===================================================== */
+
+function prepareResumeForPDF() {
+
+    const resume =
+        $("resumePreview");
+
+
+    /*
+       Save current dimensions.
+    */
+
+    const oldWidth =
+        resume.style.width;
+
+
+    const oldMinHeight =
+        resume.style.minHeight;
+
+
+    const oldBoxShadow =
+        resume.style.boxShadow;
+
+
+    const oldTransform =
+        resume.style.transform;
+
+
+    /*
+       Force exact A4-like dimensions
+       during capture.
+    */
+
+    resume.style.width =
+        "794px";
+
+
+    resume.style.minHeight =
+        "1123px";
+
+
+    resume.style.boxShadow =
+        "none";
+
+
+    resume.style.transform =
+        "none";
+
+
+    return function restore() {
+
+        resume.style.width =
+            oldWidth;
+
+
+        resume.style.minHeight =
+            oldMinHeight;
+
+
+        resume.style.boxShadow =
+            oldBoxShadow;
+
+
+        resume.style.transform =
+            oldTransform;
+
+    };
+
+}
+
+
+/* =====================================================
+   SAFE FILE NAME
+===================================================== */
+
+function getResumeFileName() {
+
+    let name =
+        getValue("name");
+
+
+    if (!name) {
+
+        name =
+            "ResumeForge-Resume";
+
+    }
+
+
+    /*
+       Remove characters that are
+       unsafe in file names.
+    */
+
+    name =
+        name
+            .replace(
+                /[^a-zA-Z0-9\s_-]/g,
+                ""
+            )
+            .trim()
+            .replace(
+                /\s+/g,
+                "-"
+            );
+
+
+    if (!name) {
+
+        name =
+            "ResumeForge-Resume";
+
+    }
+
+
+    return `${name}-Resume.pdf`;
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PDF
+===================================================== */
+
+async function downloadPDF() {
+
+    const button =
+        document.querySelector(
+            ".btn-download"
+        );
+
+
+    /*
+       Prevent double-click.
+    */
+
+    if (
+        button &&
+        button.dataset.downloading === "true"
+    ) {
+
+        return;
+
+    }
+
+
+    try {
+
+        if (button) {
+
+            button.dataset.downloading =
+                "true";
+
+            button.innerHTML = `
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <span>Creating PDF...</span>
+
+            `;
+
+        }
+
+
+        /*
+           Make sure latest information
+           is displayed before capture.
+        */
+
+        updateResume();
+
+
+        /*
+           Load PDF libraries.
+        */
+
+        await ensurePDFLibraries();
+
+
+        /*
+           Give browser a short moment
+           to finish rendering.
+        */
+
+        await new Promise(
+            function(resolve) {
+
+                setTimeout(
+                    resolve,
+                    300
+                );
+
+            }
+        );
+
+
+        const resume =
+            $("resumePreview");
+
+
+        if (!resume) {
+
+            throw new Error(
+                "Resume preview not found."
+            );
+
+        }
+
+
+        /*
+           Temporarily prepare the page.
+        */
+
+        const restore =
+            prepareResumeForPDF();
+
+
+        try {
+
+            const canvas =
+                await window.html2canvas(
+                    resume,
+                    {
+
+                        scale: 2,
+
+                        useCORS: true,
+
+                        allowTaint: false,
+
+                        backgroundColor:
+                            "#ffffff",
+
+                        logging: false,
+
+                        imageTimeout:
+                            15000
+
+                    }
+                );
+
+
+            /*
+               A4 dimensions in mm.
+            */
+
+            const pdf =
+                new window.jspdf.jsPDF(
+                    "p",
+                    "mm",
+                    "a4"
+                );
+
+
+            const pageWidth =
+                210;
+
+
+            const pageHeight =
+                297;
+
+
+            const imageWidth =
+                pageWidth;
+
+
+            const imageHeight =
+                canvas.height *
+                imageWidth /
+                canvas.width;
+
+
+            const imageData =
+                canvas.toDataURL(
+                    "image/jpeg",
+                    0.95
+                );
+
+
+            /*
+               If resume fits on one page,
+               simply add it.
+
+               If it becomes longer,
+               automatically create
+               additional pages.
+            */
+
+            if (
+                imageHeight <= pageHeight
+            ) {
+
+                pdf.addImage(
+                    imageData,
+                    "JPEG",
+                    0,
+                    0,
+                    imageWidth,
+                    imageHeight
+                );
+
+            } else {
+
+                let remainingHeight =
+                    imageHeight;
+
+
+                let position =
+                    0;
+
+
+                let pageNumber =
+                    0;
+
+
+                while (
+                    remainingHeight > 0
+                ) {
+
+                    if (
+                        pageNumber > 0
+                    ) {
+
+                        pdf.addPage();
+
+                    }
+
+
+                    pdf.addImage(
+                        imageData,
+                        "JPEG",
+                        0,
+                        position,
+                        imageWidth,
+                        imageHeight
+                    );
+
+
+                    remainingHeight -=
+                        pageHeight;
+
+
+                    position -=
+                        pageHeight;
+
+
+                    pageNumber++;
+
+                }
+
+            }
+
+
+            /*
+               Download.
+            */
+
+            pdf.save(
+                getResumeFileName()
+            );
+
+
+            showToast(
+                "PDF downloaded successfully!"
+            );
+
+
+        } finally {
+
+            restore();
+
+        }
+
+
+    } catch(error) {
+
+        console.error(
+            "PDF ERROR:",
+            error
+        );
+
+
+        showToast(
+            "PDF couldn't be created. Please check your internet connection and try again."
+        );
+
+    } finally {
+
+        if (button) {
+
+            button.dataset.downloading =
+                "false";
+
+
+            button.innerHTML = `
+
+                <i class="fa-solid fa-download"></i>
+
+                <span>Download PDF</span>
+
+            `;
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   PAGE INITIALIZATION
+===================================================== */
+
+function initializeResumeForge() {
+
+    /*
+       Load saved data.
+    */
+
+    loadData();
+
+
+    /*
+       Connect all buttons.
+    */
+
+    initializeButtons();
+
+
+    /*
+       Final update.
+    */
+
+    updateResume();
+
+}
+
+
+/* =====================================================
+   WAIT FOR DOM
+===================================================== */
+
+if (
+    document.readyState === "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeResumeForge
+    );
+
+} else {
+
+    initializeResumeForge();
+
+}
+
+
+/* =====================================================
+   END PART 4
+===================================================== */<!-- =====================================================
+     PDF LIBRARY FALLBACK
+===================================================== -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js">
+</script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+</script>
+
+
+<!-- =====================================================
+     FINAL PAGE
+===================================================== -->
+
+</body>
+
+</html>
